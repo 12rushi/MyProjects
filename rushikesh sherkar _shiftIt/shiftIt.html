@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Shift It Game</title>
+  <link rel="stylesheet" href="./css/style.css" /> 
+ </head>
+ <body>
+	<div id="gameContainer">
+	<div id="counter">Moves: <span id="count">0</span></div>
+    <div id="timer">Time: <span id="hours">00</span>:<span id="minutes">00</span>:<span id="seconds">00</span></div>
+    <br>
+	<div class="btn">
+		<button id="shuffle">Shuffle</button>
+		<button id="restart1">Restart game</button>
+	</div>
+    <div id="menu">
+      <h1>Shift It Game</h1>
+      <form id="start">
+        <label for="levelInput">Level:</label>
+        <input type="number" min="2" max="4" id="levelInput" placeholder="enter level" required>
+        <input type="submit" class="sbt" value="Start">
+      </form>
+
+    </div>
+	
+	<div class="info">
+			<h1 class="instruction">Instructions</h1>
+			<p>* Choose a level(2 to 4). Level 4 is the final level.</p><br />
+			<p>* The game board has blocks with numbers in it. Also there is a single "hole" that can be used for moving the blocks.</p><br />
+			<p>* The objective of the game is to order the numbers using the "hole" for temporary movement.</p><br />
+			<p>* Move blocks in a row by clicking on them. A block can be movied only if it is in the same row or column as the "hole".</p><br />
+			<p>* You can move multiple blocks(in the same row or column as the "hole")by clicking the farthest block that you need to be moved.</p>
+		</div>
+    <div id="completedLevel">
+      <h1>Well Done, all number have been sorted!</h1>
+      <button id="next">Proceed To Next Level</button>
+    </div>
+
+    <div id="gameOver">
+      <h1>Congratulations, You Completed The Game!</h1>
+	  <button id="gameOverRestart">Restart game</button>
+    </div>
+	
+	</div>
+
+
+
+   
+    <script type="text/javascript" src="./js/app.js"></script>
+ </body>
+</html>

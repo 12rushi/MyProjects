@@ -1,0 +1,147 @@
+body{
+  background-image:url("../images/bgGame3.jpg");
+  background-repeat: no-repeat;
+  background-size:cover;
+ background-attachment: fixed;
+  
+}
+#gameContainer{
+	/* position:relative; */
+}
+
+
+#counter, #timer {
+  padding-right: 10px; 
+  display: inline-block;
+  color: #0bff00;
+  font-size: 25px;
+}
+
+.info{
+	height: 638px;
+    width: 500px;
+    border: 2px solid #5f5d5dbf;
+    position: absolute;
+    left: 825px;
+    top: 44px;
+    /* background-color: #b15f8f; */
+	
+    border-radius: 10px;
+    padding: 10px;
+
+}
+
+#menu, #completedLevel, #gameOver {
+  margin: 40px;
+  height: 180px;
+  width: 400px;
+  padding: 50px;
+  border: 2px solid #5f5d5dbf;
+  border-radius: 10px;
+ /*  background-color: #b15f8f; */
+  text-align: center;
+}
+
+#completedLevel, #gameOver {
+  display: none;
+}
+
+
+.board {
+  margin:110px 0px 0px 175px;
+  background-color: #a7a2a8;
+  border: 1px solid #a7a2a8;
+  padding: 17px 0px 0px 17px;
+}
+
+
+.tile {
+  background-color: #7a7176;
+  font-size: 80px;
+  height: 100px;
+  width: 100px;
+  border: 1px solid black;
+  display: inline-block;
+  text-align: center;
+  margin: 1px; 
+  cursor: pointer;
+}
+
+
+.empty {
+  visibility: hidden;
+}
+
+input {
+    margin: 10px;
+    width: 102px;
+    height: 23px;
+	padding-left: 5px;
+    border: none;
+}
+
+.sbt{
+	 margin: 10px;
+	 width: 70px;
+    height: 23px;
+	background-color:#d58b03;
+}
+
+.sbt:hover{
+	background-color:green;
+}
+
+.btn{
+	width: 411px;
+	margin-top: 70px;
+}
+
+#shuffle{
+	font-size: 20px;
+	margin-top: 32px;
+    margin-left: 180px;
+	    background-color: #b1b1b1;
+}
+#shuffle:hover{
+	background-color:green;
+	color:white;
+}
+
+#restart1{
+	font-size: 20px;
+	margin-left:3px;
+	background-color: #b1b1b1;
+}
+#restart1:hover{
+	background-color:blue;
+	color:white;
+}
+
+#next{
+	font-size:18px;
+}
+#next:hover{
+	background-color:blue;
+	color:white;
+}
+
+#gameOverRestart{
+	font-size: 20px;
+}
+
+#gameOverRestart:hover{
+	background-color:green;
+	color:white;
+}
+
+h1{
+	color:#03b4ff;
+}
+p{
+   color:#d58b03;
+   font-size:21px;
+}
+
+label{
+	color:white;
+}
