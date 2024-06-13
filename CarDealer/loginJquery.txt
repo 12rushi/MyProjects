@@ -1,0 +1,298 @@
+
+$(document).ready(function(){
+
+		var popwindow = new Popwindow();
+		
+		function Popwindow(){
+
+				this.closeWindow = closeWindow;
+				this.displayPop = displayPop;
+				this.registrationWindow = registrationWindow;
+				this.insideLoginbtn = insideLoginbtn;
+			
+				this.closeInfoWindow = closeInfoWindow;
+				this.validateUserName = validateUserName;
+				this.validateUserPassword = validateUserPassword;
+				this.avoidNumberSpecialKay = avoidNumberSpecialKay;
+
+				this.validateUsernamePassword = validateUsernamePassword;
+				this.hideLogoutBtn = hideLogoutBtn;
+
+				$("#logInBtn").on("click",()=>{
+					displayPop();
+				});
+
+				$("#logOut").on("click",()=>{
+					hideLogoutBtn();
+				});
+
+				$("#registrationBtn").on("click",()=>{
+					registrationWindow();
+				});
+
+				$("#popDisplayIn").on("click",()=>{
+					closeWindow();
+				});
+
+				$("#sbt").on("click",()=>{
+					validateUsernamePassword();
+				});
+
+				$("#registrationBtnInput").on("click",()=>{
+					insideLoginbtn();
+				});
+
+				$("#cross").on("click",()=>{
+					closeWindow();
+				});
+
+				$("#crossR").on("click",()=>{
+					closeWindow();
+				});
+
+				
+				
+
+				function closeWindow(){
+					$("#popDisplayIn").css({"display":"none"});
+					$("#frcontainer").css({"display":"none"});
+					$("#registrationwindow").css({"display":"none"});
+					$("#novalue").css({"display":"none"});
+				};
+
+				function displayPop(){
+					$("#registrationwindow").css({"display":"none"});
+					$("#popDisplayIn").css({"display":"block"});
+					$("#frcontainer").css({"display":"block"});
+				};
+
+				function registrationWindow(){
+					$("#frcontainer").css({"display":"none"});
+					$("#popDisplayIn").css({"display":"block"});
+					$("#registrationwindow").css({"display":"block"});
+					
+				};
+
+				function insideLoginbtn(){
+					$("#frcontainer").css({"display":"none"});
+					$("#popDisplayIn").css({"display":"block"});
+					$("#registrationwindow").css({"display":"block"});
+
+				};
+				
+				function closeInfoWindow(){
+					$("#novalue").css({"display":"none"});
+					$("#popDisplayIn").css({"display":"none"});
+					$("#registrationwindow").css({"display":"none"});
+
+				};
+
+				function validateUserName(){
+					var userName= $("#userName").val();
+					let regUsername = /^[a-zA-Z]{2,15}$/;
+
+					if(regUsername.test(userName)){
+						$("#userNameErr").text("");	
+					}
+					else{
+						$("#userNameErr").text("*invalid username, username must be atleast 2 character");
+					}
+
+				};
+
+				function validateUserPassword(){
+					var password= $("#password").val();
+					let reguserPassword = /^(?=.*[a-zA-z])(?=.*[0-9])(?=.*[@#%$&*])/;
+
+					if(reguserPassword.test(password)){
+						$("#userPasswordErr").text("");	
+					}
+					else{
+						$("#userPasswordErr").text("*Incorrect password");
+					}
+
+				};
+
+				function avoidNumberSpecialKay(e){
+					if(!(e.key >="a" && e.key <="z") && !(e.key >="A" && e.key <="Z") && !(e.key=="@") && !(e.key=="_")){
+						e.preventDefault();
+					}	
+				};
+
+
+
+		
+
+				function validateUsernamePassword(){
+
+					var userName = $("#userName").val();
+					var password = $("#password").val();
+
+					let regUsername = /^(rushikesh)$/;
+					let regPassword = /^(rs@12)$/;
+					
+					if(regUsername.test(userName) && regPassword.test(password)){
+					
+						$("#popDisplayIn").css({"display":"none"});
+						$("#frcontainer").css({"display":"none"});
+						$("#logInBtn").css({"display":"none"});
+						$("#logOut").css({"display":"block"});
+						$("#registrationBtn").css({"display":"none"});
+
+						$("#userName").value("");
+						$("#password").value("");
+						$("#userNameErr").value("");
+						$("#userPasswordErr").value("");						
+						}
+						else{
+							$("#userPasswordErr").val("*Incorrect username password");
+						}
+
+				};
+
+				
+				function hideLogoutBtn(){
+					$("#logOut").css({"display":"none"});
+					$("#logInBtn").css({"display":"block"});
+					$("#registrationBtn").css({"display":"block"});
+				};
+
+
+		};
+
+
+
+	/*-----------------------------for registration form-------------------*/
+
+		var validator = new Validator()
+
+		function Validator(){
+
+					function validateForm(){
+						
+						this.validateForm = validateForm;
+
+
+     					var firstName = $("#firstName").val();
+						var lastName = $("#lastName").val();
+						var age = $("#age").val();
+						var dob = $("#dob").val();
+
+						var gender = $("input[name='gender']:checked").val();
+						var course = $("input[name='courseName']:checked").val();
+
+						var city = $("#city");
+						var address = $("#address").val();
+					
+	
+						let flag = true;
+
+
+						//for first name
+						let regFirstName = /^[a-zA-Z]{2,15}$/;
+						if(regFirstName.test(firstName)){	
+							$("#firstNameErr").text("*valid first name");
+						}
+						else{
+							$("#firstNameErr").text("*invalid first name");
+							flag = false;
+						}
+
+						//for last name
+						
+						let regLastName = /^[a-zA-Z]{2,15}$/;
+						if(regLastName.test(lastName)){	
+							$("#lastNameErr").text("*valid last name");
+						}
+						else{
+							$("#lastNameErr").text("*invalid last name");
+							flag = false;
+						
+						}
+
+						//for age
+						let regAge = /^(1[8|9]|[2-9][0-9]|[1][0-9][0-9])$/;
+						if(regAge.test(age)){
+							$("#ageNameErr").text("*valid age");
+						}
+						else{
+							$("#ageNameErr").text("*invalid age");
+							flag = false;
+						}
+
+						//for dob
+						let regDob = /^\d{2}\/\d{2}\/\d{4}$/;
+						if(regDob.test(dob)){
+							$("#dobNameErr").text("*valid dob");
+						}
+						else{
+							$("#dobNameErr").text("*invalid dob format (dd/mm/yy)");
+							flag = false;
+						}
+
+						//for address
+						let regAddress = /^[a-zA-Z0-9]{5,30}$/;
+						if(regAddress.test(address)){
+							$("#addressErr").text("*valid address");
+						}
+						else{
+							$("#addressErr").text("*invalid address");
+							flag = false;
+						}
+
+						//for gender
+						if(!gender){
+							$("#genderErr").text("*please select gender");
+							flag = false;
+						}
+						else{
+							$("#genderErr").text("*valid");
+						}
+					 
+						//for course
+						if(!course){
+							$("#courseErr").text("*please select courses");
+							flag = false;
+						}
+						else{
+							$("#courseErr").text("*valid");
+						}
+
+						//for city
+						if(city.value === "mumbai" || city.value === "pune" || city.value === "nagpur"){
+							$("#cityNameErrr").text("*valid");
+						}
+						else{
+							$("#cityNameErrr").text("*please select city");
+							flag = false;
+						}
+
+					
+					return flag;
+					};
+
+					$("#myForm").on("submit",(e)=>{
+						e.preventDefault();
+						if(validateForm()){
+							alert("Submit Succesfully");
+						}
+						else{
+							alert("Value not filled.");
+						}
+
+					});
+	
+			};
+
+
+
+});
+
+
+			
+
+
+
+
+
+		

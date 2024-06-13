@@ -1,0 +1,495 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>mysiteFinal.com</title>
+  <link rel="stylesheet" href="./css/style.css" />
+ </head>
+ <body>
+  <div class="container">
+	<div id="novalue">
+	
+			<header class="header registrationHeader">
+			<div class="logoname">
+				<p id="logoCar">Car</p>
+				<p id="logoDealer" >Dealer</p>
+			</div>
+
+			<div class="harderRightcontent">
+			
+				<p id="mobNoColor">+1 234</p>
+				<p id="mobNo">567-8901</p>
+				<p id="homeAddr">12 Street los Angeles,CA-94101</p>
+				<div class="searchBar">
+					<input class="hearderSreach" id="srchInput" type="text" placeholder="Search"/>
+					<button class="SreachIcon hoverBtn" id="srcBTn"><img id="srchIconBtn"src="./images/srchIcon.png" alt="srcBTn" /></button>
+					<div style="clear:both"></div>
+				</div>
+				<div style="clear:both"></div>
+			</div>
+			<div style="clear:both"></div>
+		</header>
+
+		<button id="infoClose" onclick="popwindow.closeInfoWindow()">close</button>
+		<table id="infoTable">
+			<tr>
+				<th class="th">First Name</th>
+				<th class="th">Last Name</th>
+				<th class="th">Age</th>
+				<th class="th">DOB</th>
+				<th class="th">Gender</th>
+				<th class="th">Mobile No</th>
+				<th class="th">Email</th>
+				<th class="th">Course Name</th>
+				<th class="th">Address</th>
+				<th class="th">City</th>
+				<th class="th">Pin Code</th>
+			</tr>
+			<tr>
+				<td class="td"></td>
+				<td class="td"></td>
+				<td class="td"></td>
+				<td class="td"></td>
+				<td class="td"></td>
+				<td class="td"></td>
+				<td class="td"></td>
+				<td class="td"></td>
+				<td class="td"></td>
+				<td class="td"></td>
+				<td class="td"></td>
+			</tr>
+		</table>
+
+	</div>
+	<button id="tool"><img class="toolLogo" src="./images/tool.png" alt="tool"></button>
+	<img id="dialerLogo"src="./images/orange-dial.png" alt="dialer" />
+	<button id="logInBtn" class="logIn" onclick="popwindow.displayPop()" href="#">Login </button>
+	<button id="logOut" class="logIn" href="#" onclick="popwindow.hideLogoutBtn()">LogOut</button>
+	<button id="registrationBtn" class="logIn" onclick="popwindow.registrationWindow()" href="#">Register</button>
+	<img id="loginLogo" src="./images/login.png" alt="login">
+	<div id="popDisplayIn" class="popUp" onclick="popwindow.closeWindow()"></div>
+		<div class="formContainer" id="frcontainer">
+			<form action="#">
+				<label class="labInput" for="username" maxlength="15">Username:</label><br>
+				<input class="labInput inputHovr" id="userName" type="text" placeholder="Username" onblur="popwindow.validateUserName()" onkeypress="popwindow.avoidNumberSpecialKay(event)"><br /><span id="userNameErr"></span><br>
+				<label class="labInput" for="password">Password:</label><br>
+				<input class="labInput inputHovr" id="password" type="password" placeholder="Password" onblur="popwindow.validateUserPassword()" ><br><span id="userPasswordErr"></span><br>
+				<button class="labInput" id="sbt" onclick="popwindow.validateUsernamePassword()">Submit</button>
+				<button class="labInput regsbtnInput" id="registrationBtnInput" onclick="popwindow.insideLoginbtn()">Register Here</button>
+				<button id="cross" class="close" onclick="popwindow.closeWindow()">X</button>
+			</form>
+		</div>
+
+		<div class="registrationContainer" id="registrationwindow">
+			<button id="cross" class="close" onclick="popwindow.closeWindow()">X</button>
+				
+			<div class="registrationFormContainer">
+			<h1>Registration Form</h1>
+            <form id="myForm" action="#" onsubmit="validator.validateForm()">
+                <label for="firstName">First Name:</label><br />
+                <input class="fName inputWidth" maxlength="15" type="text" id="firstName" name="firstName" onkeypress="validator.avoidNumberSpecialKay(event)" onblur="validator.validateFirstName()" onpaste="return false" oncopy="return false" ><br /><span id="firstNameErr"></span><br>
+                
+                <label for="lastName">Last Name:</label><br />
+                <input class="lName inputWidth" maxlength="15" type="text" id="lastName" name="lastName" onkeypress="validator.avoidNumberSpecialKay(event)" onblur="validator.validateLastName()" onpaste="return false" oncopy="return false"><br /><span id="lastNameErr"></span><br>
+
+				<label for="dob">Date of Birth:</label><br />
+                <input class="dob inputWidth" type="text" maxlength="10" id="dob" name="dob" placeholder="dd/mm/yy" onblur="validator.validateDob()"><br /><span id="dobNameErr"></span><br>
+                
+                <label for="age">Age:</label><br />
+                <input class="age inputWidth" type="text" maxlength="3" id="age" name="age" onkeypress="validator.avoidAlphabetsSpeChar(event)" onblur="validator.validateAge()" onpaste="return false" oncopy="return false"><br /><span id="ageNameErr"></span><br>
+                                
+                <label>Gender:</label><br />
+                <input class="cBoxMale"type="radio" name="gender" id="genderMale" value="male" onchange="validator.validateGender()"><label for="genderMale">male</label>
+                <input type="radio" name="gender" id="genderFemale" value="female" onchange="validator.validateGender()"><label for="genderFemale" >female</label><br /><span id="genderErr"></span><br>
+
+				<label> Mobile No.:</label><br />
+				<input type="text" class="mobile inputWidth" maxlength="10" id="mobileNo" name="mobileNO" onkeypress="validator.avoidAlphabetsSpeChar(event)" onblur="validator.validateMobileNo()" onpaste="return false" oncopy="return false"/><br /><span id="mobileErr"></span><br>
+
+				<label> Email:</label><br />
+				<input type="text" class="email inputWidth" id="emailId" name="email" onblur="validator.validateEmail()" onpaste="return false" oncopy="return false"/><br /><span id="EmailErr"></span><br>
+
+				<label> Password:</label><br />
+				<input type="password" class="password inputWidth" id="passwordField" name="password" onblur="validator.validatePassword()" onpaste="return false" oncopy="return false" /><br /><span id="passwordErr"></span><br>
+
+				<label> Confirm Password:</label><br />
+				<input type="password" class="confirmPassword inputWidth" id="confirmPasswordField" name="confirmPassword" onblur="validator.validateConfirmPassword()" onpaste="return false" oncopy="return false"/><br /><span id="confirmPasswordErr"></span><br>
+                
+       
+                <label>Course Name:</label><br />
+                <input class=" cNameHtml" type="checkbox" name="courseName" id="courseHtml" value="html" onchange="validator.validateCourse()"><label for="courseHtml" >html</label><br>
+                <input class=" cNameCss " type="checkbox" name="courseName" id="courseCss" value="css" onchange="validator.validateCourse()"><label for="courseCss">css</label><br>
+                <input class=" cNameJs" type="checkbox" name="courseName" id="courseJavascript" value="javascript" onchange="validator.validateCourse()"><label for="courseJavascript">javascript</label></select><br /><span id="courseErr"></span><br>
+				
+				<label for="address">Address :</label><br />
+				<textarea name="address" class="inputWidth" id="address"  placeholder="Enter Address" onblur="validator.validateAddress()"></textarea><br /><span id="addressErr"></span><br>
+
+				<label for="city">City:</label><br />
+                <select class="inputWidth" name="city" id="city" onchange="validator.validateCity()">
+					<option value="">select</option>
+					<option value="mumbai">mumbai</option>
+					<option value="pune">pune</option>
+					<option value="nagpur">nagpur</option>
+				</select><br /><span id="cityNameErr"></span><br>
+				
+				<label> Pin code:</label><br />
+				<input type="text" class="pincode inputWidth" maxlength="6" id="pincodeField" name="pincode" onkeypress="validator.avoidAlphabetsSpeChar(event)" onblur="validator.validatePincode()" /><br /><span id="pincodeErr"></span><br>
+
+                <input id="sBtn" type="submit" value="Register" />
+            </form>
+
+    </div>
+			
+		</div>
+	
+	<div class="mainContainer">
+		<header class="header">
+			<div class="logoname">
+				<p id="logoCar">Car</p>
+				<p id="logoDealer" >Dealer</p>
+			</div>
+
+			<div class="harderRightcontent">
+			
+				<p id="mobNoColor">+1 234</p>
+				<p id="mobNo">567-8901</p>
+				<p id="homeAddr">12 Street los Angeles,CA-94101</p>
+				<img id="homeLogo" src="./images/homelogo.png" alt="homelogo" />
+				<div class="searchBar">
+					<input class="hearderSreach" id="srchInput" type="text" placeholder="Search"/>
+					<button class="SreachIcon hoverBtn" id="srcBTn"><img id="srchIconBtn"src="./images/srchIcon.png" alt="srcBTn" /></button>
+					<div style="clear:both"></div>
+				</div>
+				<div style="clear:both"></div>
+			</div>
+			<div style="clear:both"></div>
+		</header>
+
+		<nav class="navbar">
+			<div class="anchDiv">
+				<a class="navAnch" href="#">Home</a>
+				<a class="navAnch" href="#">Browser By</a>
+				<a class="navAnch" href="#">Blog</a>
+				<a class="navAnch" href="#">News</a>
+				<a class="navAnch" href="#">Sales Reps</a>
+				<a class="navAnch" href="#">Pages</a>
+				<a class="navAnch" href="#">Contacts</a>
+				
+			</div>
+		</nav>
+
+		<!-- ------------------------------------------------- -->
+
+		<div class="sub">
+            <div class="left">
+				<div class="bgImg"><img src="./images/bgImg.jpg" alt="bg" /></div>
+				<div class="bginfo">
+					<p>2005 Shevrolet</p><span class="bgSpan spColr"> 1.8 XRS Sedan</span><span class="bgSpan spColr">36000 Miles</span><span class="bgSpan" style="color:#f9700c;font-size: 25px;">$25896</span>
+				</div>
+				<div class="detailsDiv">
+					<button class="details hoverBtn">Details >></button>
+					<div class="dots">
+						<button class="dot"></button>
+						<button class="dot"></button>
+						<button class="dot"></button>
+						<button class="dot"></button>
+					</div>
+				</div>
+            </div>
+
+            <div class="right">
+                <div class="quicksrch">
+                    <p style="color:#f9700c;display:inline-block;" >Quick</p>
+                    <p style="display:inline-block;" >Search</p>
+                </div>
+                <div class="form">
+                    <form action="#">
+                        <div class="t">
+                            <label class="lable" for="m">Manufacturer:</label><br>
+                            <select class="sl slManuf" name="a" id="a">
+                            <option value="any">Any</option>
+                            </select>
+                        </div>
+                        
+                        <div class="b">
+                            <table>
+                                <tr>
+                                    <td> <label class="lable" for="m">Min Price:</label><br>
+                                        <select class="sl slminMax" name="a" id="a">
+                                        <option value="any">No min</option>
+                                        </select>
+                                    </td>
+                                    <td> <label class="lable" for="m">Max Price:</label><br>
+                                            <select class="sl slminMax" name="a" id="a">
+                                            <option value="any">No max</option>
+                                            </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td> <label class="lable" for="m">Trans:</label><br>
+                                        <select class="sl slminMax" name="a" id="a">
+                                        <option value="any">Any</option>
+                                        </select>
+                                    </td>
+                                    <td> <label class="lable" for="m">Mileage:</label><br>
+                                            <select class="sl slminMax" name="a" id="a">
+                                            <option value="any">Any</option>
+                                            </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td> <label class="lable" for="m">Body Type:</label><br>
+                                        <select class="sl slminMax" name="a" id="a">
+                                        <option value="any">Any</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <button class="hoverBtn" id="btnSearch">SEARCH</button>
+                       
+                    </form>
+                </div>
+				<div style="clear:both"></div>
+            </div>
+        </div>
+		<!-- -------------------------------------------------- -->
+		<div class="middle">
+			<div class="mLeft">
+				<p class="size"id="recent">Recent</p><span class="size" id="auto">Automobile</span>
+				<hr id="lHr" />
+
+				<div class="imgBox">
+					<div class="row1">
+						<img src="./images/img1.jpg" alt="img1" id="img1" />
+						<img class="carameLogo"src="./images/camera.png" alt="camaeralogo" />
+						<img class="playLogo" src="./images/play-buttton.png" alt="pauseBtn" />
+						<p class="pImg1">2009 Aston Martin DB9</p><span class="sImg1">$9.966</span>
+						<p class="img1Discription">1.4i Ts 5Dr, 75000, 2009,New Jersey Newark</p>
+						<button class="leftCompare"></button>
+						<p class="comp">Compare</p>
+						<button class="rightCompare hoverBtn">Details</button>
+					</div>
+
+					<div id="row1Mid" class="row1">
+						<img src="./images/img2.jpg" alt="img1" id="img1" />
+						<img class="carameLogo"src="./images/camera.png" alt="camaeralogo" />
+						<img class="playLogo" src="./images/play-buttton.png" alt="pauseBtn" />
+						<p class="pImg1">2009 Aston Martin DB9</p><span class="sImg1">$9.966</span>
+						<p class="img1Discription">1.4i Ts 5Dr, 75000, 2009,New Jersey Newark</p>
+						<button class="leftCompare"></button>
+						<p class="comp">Compare</p>
+						<button class="rightCompare hoverBtn">Details</button>
+					</div>
+
+					<div class="row1">
+						<img src="./images/img3.jpg" alt="img1" id="img1" />
+						<img class="carameLogo"src="./images/camera.png" alt="camaeralogo" />
+						<img class="playLogo" src="./images/play-buttton.png" alt="pauseBtn" />
+						<p class="pImg1">2009 Aston Martin DB9</p><span class="sImg1">$9.966</span>
+						<p class="img1Discription">1.4i Ts 5Dr, 75000, 2009,New Jersey Newark</p>
+						<button class="leftCompare"></button>
+						<p class="comp">Compare</p>
+						<button class="rightCompare hoverBtn">Details</button>
+					</div>
+
+					<!-- <div style="clear:both"></div> -->
+					<div class="row1">
+						<img src="./images/img4.jpg" alt="img1" id="img1" />
+						<img class="carameLogo"src="./images/camera.png" alt="camaeralogo" />
+						<img class="playLogo" src="./images/play-buttton.png" alt="pauseBtn" />
+						<p class="pImg1">2009 Aston Martin DB9</p><span class="sImg1">$9.966</span>
+						<p class="img1Discription">1.4i Ts 5Dr, 75000, 2009,New Jersey Newark</p>
+						<button class="leftCompare"></button>
+						<p class="comp">Compare</p>
+						<button class="rightCompare hoverBtn">Details</button>
+					</div>
+
+					<div id="row1Mid" class="row1">
+						<img src="./images/notFound.png" alt="img1" id="img1" />
+						<img class="carameLogo"src="./images/camera.png" alt="camaeralogo" />
+						<img class="playLogo" src="./images/play-buttton.png" alt="pauseBtn" />
+						<p class="pImg1">2009 Aston Martin DB9</p><span class="sImg1">$9.966</span>
+						<p class="img1Discription">1.4i Ts 5Dr, 75000, 2009,New Jersey Newark</p>
+						<button class="leftCompare"></button>
+						<p class="comp">Compare</p>
+						<button class="rightCompare hoverBtn">Details</button>
+					</div>
+					<div class="row1">
+						<img src="./images/img6.jpg" alt="img1" id="img1" />
+						<img class="carameLogo"src="./images/camera.png" alt="camaeralogo" />
+						<img class="playLogo" src="./images/play-buttton.png" alt="pauseBtn" />
+						<p class="pImg1">2009 Aston Martin DB9</p><span class="sImg1">$9.966</span>
+						<p class="img1Discription">1.4i Ts 5Dr, 75000, 2009,New Jersey Newark</p>
+						<button class="leftCompare"></button>
+						<p class="comp">Compare</p>
+						<button class="rightCompare hoverBtn">Details</button>
+					</div>
+				<!-- 	<div style="clear:both"></div> -->
+					<div class="row1">
+						<img src="./images/notFound.png" alt="img1" id="img1" />
+						<img class="carameLogo"src="./images/camera.png" alt="camaeralogo" />
+						<img class="playLogo" src="./images/play-buttton.png" alt="pauseBtn" />
+						<p class="pImg1">2009 Aston Martin DB9</p><span class="sImg1">$9.966</span>
+						<p class="img1Discription">1.4i Ts 5Dr, 75000, 2009,New Jersey Newark</p>
+						<button class="leftCompare"></button>
+						<p class="comp">Compare</p>
+						<button class="rightCompare hoverBtn">Details</button>
+					</div>
+					<div id="row1Mid" class="row1">
+						<img src="./images/img8.jpg" alt="img1" id="img1" />
+						<img class="carameLogo"src="./images/camera.png" alt="camaeralogo" />
+						<img class="playLogo" src="./images/play-buttton.png" alt="pauseBtn" />
+						<p class="pImg1">2009 Aston Martin DB9</p><span class="sImg1">$9.966</span>
+						<p class="img1Discription">1.4i Ts 5Dr, 75000, 2009,New Jersey Newark</p>
+						<button class="leftCompare"></button>
+						<p class="comp">Compare</p>
+						<button class="rightCompare hoverBtn">Details</button>
+					</div>
+					<div class="row1">
+						<img src="./images/img9.jpg" alt="img1" id="img1" />
+						<img class="carameLogo"src="./images/camera.png" alt="camaeralogo" />
+						<img class="playLogo" src="./images/play-buttton.png" alt="pauseBtn" />
+						<p class="pImg1">2009 Aston Martin DB9</p><span class="sImg1">$9.966</span>
+						<p class="img1Discription">1.4i Ts 5Dr, 75000, 2009,New Jersey Newark</p>
+						<button class="leftCompare"></button>
+						<p class="comp">Compare</p>
+						<button class="rightCompare hoverBtn">Details</button>
+					</div>
+					<div style="clear:both"></div>
+				</div>
+				<p id="seaaAutomatn">See all automation<span id="seaaAutomatnSpan">>></span></p>
+			</div>
+
+			<div class="mRight">
+				<div class="uCalBox">
+					<p id="loan">Loan</p><span id="spanLoan">Calculator</span>
+					<hr />
+					<form action="#">
+						<label class="lable">Car Loan Amount</label>
+						<input class="lableInput" type="text" placeholder="3000" /><span class="lableSpan">$</span>
+						<br />
+						<label  class="lable">Annual Intrest Rate</label>
+						<input class="lableInput aRate" type="text" placeholder="7.0" /><span class="lableSpan">%</span>
+						<br />
+						<label class="lable">Term of Car Loan</label>
+						<input class="lableInput" type="text" placeholder="4" /><span class="lableSpan">Year</span>
+						<br />
+						<button id="calculate"> Calculate</button>
+						<br />
+						<label class="lable">Number of Car Payments</label>
+						<input class="lableInput aPayment" type="text" placeholder="48" />
+						<br />
+						<label class="lable">Car Loan Amount</label>
+						<input class="lableInput" type="text" placeholder="71.83" /><span class="lableSpan">$</span>
+						<br />
+					</form>
+				</div>
+
+				<div class="bRecent">
+					<p id="recentNews">Recent</p><span id="news">News</span>
+					<hr id="newsHr"/>
+					<span class="sNews">>></span><p class="pNews">Lorem ipsum dolor sit amet,consectetur adipisicing</p>
+
+					<span class="sNews">>></span><p class="pNews">Lorem ipsum dolor sit amet,consectetur adipisicing</p>
+
+					<span class="sNews">>></span><p class="pNews">Lorem ipsum dolor sit amet,consectetur adipisicing</p>
+					<hr id="bottonNewHr" />
+
+					<p id="allNews">See all news</p><span id="allNewsSpan">>></span>
+				</div>
+			</div>
+			<div style="clear:both"></div>
+			
+		</div>
+
+<!-- ----------------------footer----------------------------- -->
+		
+		 <footer class="ftr">
+            <div class="outr">
+                <div class="box">
+                    <p class="colr">About</p>
+                    <p class="us">Us</p>
+                    <hr>
+                    <p class="aBoutUsP">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda veniam aspernatur iste, harum reiciendis magnam, tenetur maxime, dicta vero aut architecto eveniet laudantium repellendus pariatur voluptatem. Culpa nostrum sapiente quis?</p>
+                    <p id="readmore">Read more</p><span id="readmoreSpan">>></span>
+                </div>
+                <div class="box">
+                    <p class="colr">Our</p>
+                    <p class="us">Hours</p>
+                    <hr class="timedayHr">
+                    <p class="day">Monday</p>
+                    <p class="time">8 am to 7pm</p>
+                    <hr class="timedayHr">
+                    <p class="day">Tuesday</p>
+                    <p class="time">8 am to 9pm</p>
+                    <hr class="timedayHr">
+                    <p class="day">Wednesday</p>
+                    <p class="time">8 am to 9pm</p>
+                    <hr class="timedayHr">
+                    <p class="day">Thursday</p>
+                    <p class="time">8 am to 9pm</p>
+                    <hr class="timedayHr">
+                    <p class="day">Friday</p>
+                    <p class="time">8 am to 9pm</p>
+                    <hr class="timedayHr">
+                    <p class="day">Saturday</p>
+                    <p class="time">8 am to pm</p>
+                    <hr class="timedayHr">
+                    <p class="day">Sunday</p>
+                    <p class="time">Closed</p>
+                </div>
+                <div class="box">
+                    <p class="colr">Our</p>
+                    <p class="us">Contacts</p>
+                    <hr>
+                    <p class="addresInfo">Address Info 1:</p>
+                    <p class="addresInfoContent">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <p class="phone">Phone:</p>
+                    <p class="phoneNo" style="color: grey;">+1(234)567-8901</p><br>
+                    <p class="fax">FAX:</p>
+                    <p class="faxContent" style="color: grey;">+1(234)567-8901</p><br>
+                    <p class="email">Email:</p>
+                    <p class="econtent"style="color: grey;">rs@sitename.com</p>
+                </div>
+                <div class="box mapBox">
+                    <img id="mapImg"src="./images/map.jpg" alt="map">
+					 <select class="mapBtnn" name="a" id="a">
+                           <option value="map">Map</option>
+                     </select>
+					 <button id="positive">+</button>
+					 <button id="negative">-</button>
+					 <img src="./images/map-man.png" alt="mapimg" id="map" />
+                </div>
+                <div style="clear: both;"></div>
+				<img class="logofb" src="./images/fb.png" alt="fb" />
+				<img class="logotwtr" src="./images/twtr.png" alt="fb" />
+				<img class="logowifi" src="./images/wifi.png" alt="fb" />
+				<img class="logoHomeL" src="./images/homelogo.png" alt="fb" />
+				<img class="logoDial" src="./images/phone.png" alt="fb" />    
+
+				
+        </div>
+        <hr id="fttrHr">
+            <div class="fbttm">
+                <p class="copright">Copyright &#169; 2012.ThemeMakers.All rights reserved</p>
+                <div class="cpdiv">
+                    <P style="color:#d3cfcf;display: inline-block;">developed by</P><span style="color:#787171;margin-left:3px">ThemeMakers</span>
+                </div>
+                    
+
+            </div>
+            
+        </footer>
+
+
+
+
+	</div>
+  </div>
+  <script src="./js/app.js"></script>
+ </body>
+</html>

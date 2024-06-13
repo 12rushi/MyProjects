@@ -1,0 +1,939 @@
+*{
+	margin:0;
+	padding:0;
+}
+
+.container{
+	/* height:2277px; */
+	width:1500px;
+	margin:auto;
+	background-color:#e3dcdc;
+	position: relative;
+}
+#tool{
+	height: 30px;
+    position: absolute;
+    border: none;
+    top: 189px;
+	cursor: pointer;
+}
+.toolLogo{
+	height: 29px;
+}
+.logIn{
+	font-size: 15px;
+    background-color: #f9702c;
+	color: white;
+    height: 39px;
+    width: 103px;
+    position: absolute;
+	border: none;
+	right: 0px;
+    top: 189px;
+	cursor: pointer;
+}
+
+#logOut{
+	 font-size: 14px;
+	 background-color: black;
+	 color: white;
+	 display:none;
+}
+
+#loginLogo{
+	position: absolute;
+    height: 18px;
+    filter: invert();
+    right: 8px;
+    top: 200px;
+}
+
+.popUp{
+	position: fixed;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none;
+    left: 0px;
+    top: 0px;
+    z-index: 1;
+}
+
+.formContainer{
+    width: 400px;
+    height: 300px;
+    border: 17px solid #ffbd9c;
+    padding: 35px 35px;
+    position: fixed;
+    background-color: #f7dbcc;
+    z-index: 2;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+
+}
+
+
+.labInput{
+	color: black;
+    margin: 6px 93px 8px 53px;
+	font-size: 25px;
+	padding: 4px;
+}
+
+.inputHovr:hover{
+	cursor: pointer;
+	background-color: #fae5ca;
+	color: black;
+}
+
+#sbt{
+	background-color: red;
+	border: 1px solid black;
+	cursor: pointer;
+	padding: 6px;
+    color: black;
+    margin-left: 156px;
+	border-radius: 10px;
+
+}
+
+#sbt:hover{
+	background-color: rgb(245, 196, 196);
+}
+
+.close{
+	position: absolute;
+	position: absolute;
+    width: 26px;
+    height: 26px;
+    top: 3px;
+    right: 10px;
+	color: black;
+    font-size: 23px;
+	cursor: pointer;
+}
+
+.close:hover{
+	background-color: red;
+	
+}
+
+#logInBtn:hover{
+	background-color: rgb(255, 208, 158);
+}
+.mainContainer{
+	/* height:3000px; */
+	width:1000px;
+	margin:auto;
+	overflow:hidden;
+}
+
+.logoname{
+	display:inline-block;
+	margin-top: 70px;
+	margin-bottom: 13px;
+}
+
+#logoCar{
+	display:inline-block;
+	color:#f9700c;
+	font-size: 80px;
+}
+
+#logoDealer{
+	display:inline-block;
+	font-size: 80px;
+}
+
+.harderRightcontent{
+	float:right;
+	/* position:relative; */
+	margin-top: 21px;
+	
+}
+
+#mobNoColor{
+	display:inline-block;
+	color:#f9700c;
+	padding-left: 162px;
+    font-size: 25px;
+	
+}
+
+#mobNo{
+	display:inline-block;
+    font-size: 25px;
+}
+
+#dialerLogo{
+	height: 28px;
+    position: absolute;
+    right: 435px;
+    top: 22px;
+	
+}
+
+#homeAddr{
+	 margin-top: 10px;
+	 padding-left: 74px;
+	 font-size: 20px;
+}
+
+#homeLogo{
+	height: 35px;
+    position: absolute;
+    right: 518px;
+    top: 52px;
+
+}
+.searchBar{
+	float:right;
+	margin-top: 20px;
+}
+
+.hearderSreach{
+	float:left;
+}
+.SreachIcon{
+	height: 33px;
+    width: 56px;
+    background-color: #f9700c;
+    border: none;
+    cursor: pointer;
+    margin-top: 9px;
+}
+
+.hoverBtn:hover{
+	background-color:#fae5ca;
+}
+#srchInput{
+	height: 14px;
+    width: 239px;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    margin: 9px 0px 0px 0px;
+}
+
+#srchIconBtn{
+	height: 20px;
+}
+
+.navbar{
+	height:80px;
+	width:1000px;
+	background-color:#000000e0;
+	display:inline-block;
+}
+
+.anchDiv{
+	margin-top: 27px;
+}
+.navAnch{
+	color: white;
+    text-decoration: none;
+    padding: 26px 8px 33px 8px;
+    border-right: 4px solid black;
+
+}
+
+
+
+.anchDiv a:hover{
+	color:#f9700c;
+	background-color:black;
+}
+
+/* ----------------------------------------------- */
+	.sub{
+		 margin-top: 27px;
+		 /* height: 450px; */
+	}
+	.left{
+        width: 600px;
+        /* height: 420px; */
+        float: left;
+        background-color: #fdf7f7;
+		
+        }
+
+		.bgImg img{
+			    height: 299px;
+				width: 600px;
+		}
+		
+		.bginfo{
+			margin: 10px 10px;
+		}
+		.bginfo p{
+			display:inline-block;
+			font-size: 22px;
+		}
+
+		.bgSpan{
+			margin-left: 43px;
+			}
+
+			.spColr{
+				color:#afafaf;
+			}
+
+			.details{
+				display:inline-block;
+				font-size: 17px;
+				height: 30px;
+				width: 101px;
+				color: white;
+				background-color: #f9700c;
+				margin-left: 10px;
+				border:none;
+				cursor:pointer;
+					
+			}
+			
+			.dots{
+				display:inline-block;
+				margin-left: 340px;
+			}
+
+			.dot{
+				height: 16px;
+				width: 16px;
+				border-radius: 50px;
+				cursor:pointer;
+			}
+
+			.dot:hover{
+				border:1px solid #f9700c;
+			}
+        .right{
+            width: 400px;
+            /* height: 420px; */
+            float:left;
+			background-color: #fdf7f7;
+
+        }
+
+		.quicksrch{
+			margin: 20px 26px;
+			 font-size: 29px;
+		}
+
+		.lable{
+			font-size: 20px;
+			color: #585555;
+			margin-left: 45px;
+		}
+		.sl{
+			margin-left: 47px;
+			border: 1px solid #d7cfcf;
+		}
+		.slManuf{
+			    height: 32px;
+				width: 301px;
+		}
+
+		.slminMax{
+			height: 32px;
+			width: 125px;
+		}
+
+		#btnSearch{
+				height: 36px;
+				width: 120px;
+				color: white;
+				background-color: #f9700c;
+				margin: 50px 0px 0px 48px;
+				border:none;
+				cursor:pointer;
+
+		}
+        /* .l{
+            float:left;
+        } */
+
+		/* --------------------------------------------- */
+
+		.middle{
+			/* height:1029px; */
+			width:1000px;
+			background-color:white;
+		}
+
+		.mLeft{
+			width: 600px;
+            /* height: 1000px; */
+			background-color:#fdf7f7;
+			float:left;
+		}
+
+		#lHr{
+			width: 560px;
+			margin-left: 15px;
+		}
+
+		.imgBox{
+			width: 580px;
+            /* height: 600px; */
+			background-color:white;
+			margin-left: 10px;
+			margin-top: 15px;
+		}
+		
+		.row1{
+			width:186.6px;
+			height: 291px;
+			background-color:white;
+			float:left;
+			position:relative;
+			margin: 6px 1px;
+		}
+
+		#img1{
+			width:186.6px;
+			height:150px;
+		}
+
+		.carameLogo{
+			position: absolute;
+			height: 24px;
+			filter: invert(1);
+			left: 152px;
+			top: 115px;
+		}
+		
+		.playLogo{
+			    position: absolute;
+				height: 24px;
+				filter: invert(1);
+				left: 121px;
+				top: 115px;
+		}
+
+		.pImg1{
+			display:inline-block;
+			font-size: 14px;
+		}
+
+		.sImg1{
+			color:#f9700c;
+			font-size: 14px;
+			margin-left: 11px;
+		}
+		
+		.img1Discription{
+			    margin-top: 17px;
+				color: grey;
+		}
+
+		.leftCompare{
+			height: 10px;
+			width: 10px;
+			cursor:pointer;
+		}
+
+		.comp{
+			display:inline-block;
+			margin-left: 11px;
+			margin-top: 25px;
+			color:#8f8a8a;
+		}
+		
+		.rightCompare{
+			height: 24px;
+			width: 60px;
+			background-color: #f9700c;
+			color: white;
+			border: none;
+			margin-left: 38px;
+			cursor:pointer;
+		}
+
+		/* #row1Mid{
+			margin:0px 10px 10px 10px;
+		} */
+
+		#seaaAutomatn{
+			display: inline-block;
+			margin-right: 79px;
+			margin-top: 29px;
+			padding-left: 18px;
+			color: #f9700c;
+			cursor:pointer;
+		}
+		#seaaAutomatnSpan{
+			display: inline-block;
+			margin-left: 21px;
+			color: #706565;
+			}
+		
+		.mRight{
+			width: 400px;
+            /* height: 1000px; */
+			background-color:#fdf7f7;
+			float:left;
+		}
+		
+		.uCalBox{
+			width: 380px;
+			/* height: 447px; */
+			background-color: #e3dcdc;
+			display: inline-block;
+			border: 1px solid #b7abab;
+			margin-top: 20px;
+		}
+		
+		#loan{
+			font-size: 31px;
+			color: #f9700c;
+			display: inline-block;
+			margin: 10px;
+		}
+
+		#spanLoan{
+			font-size: 31px;
+		}
+
+		.lable {
+			 font-size: 20px;
+			color: #585555;
+			margin-left: 45px;
+		}
+		
+		.lableInput{
+			width: 46px;
+			height: 32px;
+			margin-left: 70px;
+			margin-top: 19px;
+			padding-left: 5px;
+		}
+		.aRate{
+			margin-left: 57px;
+		}
+
+		.aPayment{
+			margin-left: 10px;
+		}
+		.lableSpan{
+			margin-left: 10px;
+			color: #6e6c6c;
+		}
+
+		#calculate{
+			height: 36px;
+			width: 120px;
+			color: white;
+			background-color: #f9700c;
+			margin: 10px 0px 10px 45px;
+			border:none;
+			cursor:pointer;
+		}
+		
+		.bRecent{
+			width: 380px;
+			/* height: 400px; */
+			background-color: #e3dcdc;
+			display: inline-block;
+			margin-top: 20px;
+			border: 1px solid #bb9f9f;
+		}
+
+		#recentNews{
+			color:#f9700c;
+			display:inline-block;
+			font-size: 31px;
+			margin: 12px;
+		}
+		#news{
+			font-size: 31px;
+		}
+
+		.sNews{
+			color:#f9700c;
+			margin:15px;
+		}
+
+		.pNews{
+			display:inline-block;
+			margin-top: 32px;
+		}
+
+		#newsHr{
+		 margin-bottom: 19px;
+		}
+
+		#bottonNewHr{
+			margin-top: 58px;
+		}
+
+		#allNews{
+			color:#f9700c;
+			margin: 16px;
+			font-size: 19px;
+			cursor:pointer;
+			display:inline-block;
+		}
+		#allNewsSpan{
+			display:inline-block;
+			color:#706565;
+		}
+
+		#recent{
+			display:inline-block;
+			color:#f9700c;
+			margin: 14px;
+		}
+
+		.size{
+			 font-size: 24px;
+		}
+
+	/* -------------------------footer------------------------------------- */
+
+	.ftr{
+            background-color: black;
+            /* height: 430px; */
+			position:relative;
+            
+        }
+
+        .box{
+            width: 237.5px;
+            height: 200px;
+            background-color:black;
+            float: left;
+            margin-left: 10px;
+			margin-top: 19px;
+        }
+		
+		.mapBox{
+			position:relative;
+		}
+
+		.mapBtnn{
+			position: relative;
+			right: -140px;
+			top: -217px;
+			width: 75px;
+		}
+
+		#positive{
+			position: absolute;
+			left: 10px;
+			top: 67px;
+			height: 18px;
+			width: 18px;
+
+		}
+
+		#negative{
+			position: absolute;
+			left: 10px;
+			top: 85px;
+			height: 18px;
+			width: 18px;
+		}
+
+		#map{
+			position: absolute;
+			height: 37px;
+			width: 44px;
+			top: 19px;
+			left: -2px;
+		}
+        .colr{
+            color:orangered;
+            display: inline-block;
+            font-size: 30px;
+        }
+        .us{
+            color: white;
+            display: inline-block;
+            font-size: 30px;
+        }
+
+		.aBoutUsP{
+			color: gray;
+			 margin-top: 10px;
+		}
+        #readmore{
+            color: orangered;
+            margin-top: 44px;
+			display: inline-block;
+
+        }
+		#readmoreSpan{
+			color:gray;
+			display: inline-block;
+			margin-left: 16px;
+		}
+
+        .day{
+            display: inline-block;
+			color: white;
+			 margin-top: 10px;
+			 padding-bottom: 3px;
+
+        }
+        .time{
+            float: right;
+            color: gray;
+			margin-top: 10px;
+        }
+
+        .addresInfo{
+            color: white;
+			margin-top: 10px;
+			margin-left: 48px;
+            
+        }
+
+		.addresInfoContent{
+			color: grey;
+			margin-left: 48px;
+			margin-top: 10px;
+		}
+        .phone{
+            color: white;
+            display: inline-block;
+			margin-left: 48px;
+			margin-top: 10px;
+            
+        }
+        .phoneNo{
+            display: inline-block;
+        }
+        .fax{
+            color: white;
+            display: inline-block;
+			margin-left: 48px;
+			margin-top: 10px;
+            
+        }
+        .faxContent{
+            display: inline-block;
+        }
+        .email{
+            color: white;
+            display: inline-block;
+			margin-left: 48px;
+			margin-top: 10px;
+            
+        }
+        .econtent{
+            display: inline-block;
+        }
+       /*  .copright{
+            color: white;
+        } */
+
+		#fttrHr{
+			margin-top: 160px;
+			width: 968px;
+			margin-left: 12px;
+		}
+		
+        .copright{
+				 display: inline-block;
+			    margin-top: 10px;
+				margin-left: 10px;
+				color: gray;
+        }
+        .cpdiv{
+            display: inline-block;
+            margin-left: 448px;
+        }
+
+		#mapImg{
+			    margin-top: 12px;
+		}
+
+		.logofb{
+			    height: 35px;
+				position: absolute;
+				left: 600px;
+				top: 225px;
+
+		}
+
+		.logotwtr{
+			    height: 64px;
+				position: absolute;
+				left: 537px;
+				top: 210px;
+		}
+
+		.logowifi{
+			height: 36px;
+			position: absolute;
+			left: 649px;
+			top: 225px;
+
+		}
+
+		.logoHomeL{
+			height: 36px;
+			position: absolute;
+			left: 508px;
+			top: 64px;
+			filter: invert(1);
+		}
+
+		.logoDial{
+			height: 24px;
+			position: absolute;
+			left: 517px;
+			top: 133px;
+			filter: invert(1);
+
+		}
+
+		/* ----------------registratinContainer--------------------- */
+		
+		#frcontainer{
+			display: none;
+		}
+
+		#registrationBtn{
+			margin-top: 44px;
+		}
+
+		#registrationBtn:hover{
+			background-color: #fae5ca;
+		}
+
+		#registrationBtnInput{
+			    background-color: #00c4ff;
+				border: 1px solid black;
+				cursor: pointer;
+				padding: 6px;
+				color: black;
+				margin-left: 120px;
+				border-radius: 10px;
+		
+		}
+
+		#registrationBtnInput:hover{
+			 background-color: #c7eef9;
+		}
+		#registrationwindow{
+			    width: 465px;
+				height: 450px;
+				padding: 17px;
+				position: fixed;
+				/*background-color: #ffbd9c;*/
+				z-index: 2;
+				transform: translate(-50%, -50%);
+				top: 50%;
+				left: 50%;
+				display: none;
+		}
+
+
+		/*-----------------registration form----------------------------*/
+
+
+		.registrationFormContainer{
+            width: 323px;
+			height: 450px;
+            margin: auto;
+            background-color: #f7ece5;
+			overflow:auto;
+        }
+
+		
+		h1{
+			text-align:center;
+			color: #f9720c;
+			margin-bottom: 12px;
+		}
+
+        label{
+            margin: 10px;
+        }
+
+        input{
+            margin-left: 10px;
+			cursor:pointer;
+        }
+
+		.inputWidth{
+			width:285px;
+			margin-left: 10px;
+			color:black;
+		}
+
+     
+
+		#sBtn{
+			background-color: red;
+			color: white;
+			padding: 4px;
+			border: none;
+			margin-left: 125px;
+			margin-top: 30px;
+			border-radius: 5px;
+			cursor:pointer;
+		}
+
+		#sBtn:hover{
+			background-color: #f9a4a4;
+		}
+        
+        span{
+		font-size:12px;
+		color:red;
+		margin: 10px;
+		}
+
+		#city{
+			margin-left: 10px;
+		}
+
+		#address{
+			margin-left: 10px;
+		}
+
+		/* display info-------------------------------------- */
+
+		#novalue{
+			height: 2127px;
+			width: 100%;
+			background-color: #e0d7d7;
+			z-index: 5;
+			position: absolute;
+			display: none;
+
+		}
+
+		#infoTable{
+			    text-align: center;
+				margin: 103px 108px;
+				font-size: 27px;
+			}
+		
+
+		#infoTable, .th, .td {
+			border: 1px solid black;
+			border-collapse: collapse;
+			padding:0px 8px;
+			}
+
+			#infoClose{
+				position: absolute;
+				right: 0px;
+				height: 25px;
+				width: 93px;
+				background-color: red;
+				color: white;
+				cursor: pointer;
+			}
+
+			#infoClose:hover{
+				background-color: #3e3939;
+			}
+
+			.registrationFooter{
+				margin-top:1300px;
+			}

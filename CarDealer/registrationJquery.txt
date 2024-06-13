@@ -1,0 +1,356 @@
+var validator = new Validator()
+
+function Validator(){
+			
+			this.validateFirstName = validateFirstName;
+			this.validateLastName  = validateLastName;
+			this.validateAge = validateAge;
+			this.validateDob = validateDob;
+			this.validateGender = validateGender;
+			this.validateMobileNo = validateMobileNo;
+			this.validateEmail = validateEmail;
+			this.validatePassword = validatePassword;
+			this.validateConfirmPassword = validateConfirmPassword;
+			this.validateCourse = validateCourse;
+			this.validateAddress = validateAddress;
+			this.validateCity = validateCity;
+			this.validatePincode = validatePincode;
+
+			this.avoidNumberSpecialKay = avoidNumberSpecialKay;
+			this.avoidAlphabetsSpeChar = avoidAlphabetsSpeChar;
+
+			this.validateForm = validateForm;
+			
+			var password;
+			
+
+			function avoidNumberSpecialKay(e){
+					if(!(e.keyCode > 64 && e.keyCode < 123)){
+						e.preventDefault();
+					}	
+				};
+
+				function avoidAlphabetsSpeChar(e){
+					if(!(e.keyCode > 47 && e.keyCode < 58)){
+						e.preventDefault();
+					}	
+				};
+
+				//for first name
+				function validateFirstName(){
+					var firstName =$("#firstName").val();
+
+					let regFirstName = /^[a-zA-Z]{2,15}$/;
+					if(regFirstName.test(firstName)){
+						$("#firstNameErr").text("");	
+					}
+					else{
+						$("#firstNameErr").text("*invalid firstname, firstname must be atleast 2 character");
+					}
+
+				};
+
+				//for last name
+				function validateLastName(){
+					var lastName=$("#lastName").val();
+
+					let regLastName = /^[a-zA-Z]{2,15}$/;
+					if(regLastName.test(lastName)){
+						$("#lastNameErr").text("");	
+					}
+					else{
+						$("#lastNameErr").text("*invalid lastname, lastname must be atleast 2 character");
+					}
+
+				};
+
+				//for age
+				function validateAge(){
+					var age=$("#age").val();
+					let regAge = /^(1[8|9]|[2-9][0-9]|[1][0-9][0-9])$/;
+					if(regAge.test(age)){	
+						$("#ageNameErr").text("");
+					}
+					else{
+						$("#ageNameErr").text("*invalid age, age must be within (18-200)");
+						
+					}
+
+				};
+
+				//for DOB
+				function validateDob(){
+					var dob=$("#dob").val();
+
+					let regDob = /^\d{2}\/\d{2}\/\d{4}$/;
+					if(regDob.test(dob)){
+						$("#dobNameErr").text("");
+						let splitDob = dob.split('/');
+						console.log(splitDob);
+						let day = parseInt(splitDob[0]);
+						let month = parseInt(splitDob[1] - 1);
+						let year = parseInt(splitDob[2]);
+
+						let currentDate = new Date();
+						var age = currentDate.getFullYear()-year;
+						//console.log(age);
+						if(age < 18){
+							$("#ageNameErr").text("invalid age, age must be within (18-200)");
+							$("#age").val(age);
+							return false;
+						}
+						else{
+						$("#ageNameErr").text("");
+						$("#age").val(age)
+						return true;
+						}
+						//document.getElementById("age").value = age;
+
+						if(year > 2024){
+							$("#dobNameErr").text("*year must be less than 2024");
+						}
+						else if(month > 12){
+							$("#dobNameErr").text("*month must be less than 12");
+						}
+						else if(day > 31){
+							$("#dobNameErr").text("*invalid date");
+						}
+					}
+					else{
+						$("#dobNameErr").text("*invalid dob format (dd/mm/yy)");
+						
+					}
+
+				};
+
+				//for gender
+				function validateGender(){
+					var gender = $("input[name='gender']:checked").val();
+					if(!gender){
+						$("#genderErr").text("*please select gender");	
+						}
+						else{
+						$("#genderErr").text("");
+						}
+
+				};
+
+				//for mobile no	
+				function validateMobileNo(){
+					var mobileNo = $("#mobileNo").val();
+
+					let regMobileNo = /^[6-9][0-9]{9}$/;
+					if(regMobileNo.test(mobileNo)){
+						$("#mobileErr").text("");	
+					}
+					else{
+						$("#mobileErr").text("*invalid, mobile no. must be 10 digits");
+					}
+
+				};
+			
+
+				//for email
+				function validateEmail(){
+					var emailId = $("#emailId").val();
+
+					let regEmail = /^[a-z_][a-z0-9_]+[.]?[a-z0-9_]+@[a-z]+(.com)$/;
+					if(regEmail.test(emailId)){
+						$("#EmailErr").text("");	
+					}
+					else{
+						$("#EmailErr").text("*invalid , email format must be (abc.poq@xyz.com)");
+					}
+
+				};
+
+				//password 
+				function validatePassword(){
+					var passwordField = $("#passwordField").val();
+			
+					let regPassword = /^(?=.*[a-zA-z])(?=.*[0-9])(?=.*[@#%$&*])/;
+					if(regPassword.test(passwordField)){
+						$("#passwordErr").text("");
+						password = passwordField;
+					}
+					else{
+						$("#passwordErr").text("*password must contain atleast @#%$&* and number");
+					}
+
+				};
+				//confirm password
+				function validateConfirmPassword(){
+					var confirmPasswordField = $("#confirmPasswordField").val();
+
+					if(password == confirmPasswordField){
+						$("#confirmPasswordErr").text("");	
+					}
+					else{
+						$("#confirmPasswordErr").text("*password mismatch ");
+					}
+
+				};
+				//for course
+				function validateCourse(){
+					//console.log("insiide ");
+					var course = $("input[name='courseName']:checked").val();;
+					
+					if(!course ){
+						$("#courseErr").text("*please select courses");		
+					}
+					else{
+						$("#courseErr").text("");	
+					}
+
+				};
+
+				//for address
+				function validateAddress(){
+					var address = $("#address").val();
+					
+					let regAddress = /^[a-zA-Z0-9\s]{5,30}$/;
+					if(regAddress.test(address)){
+						$("#addressErr").text("");	
+					}
+					else{
+						$("#addressErr").text("*invalid , address must be within 5-30 character");
+						
+					}
+					
+
+				};
+
+				//for city
+				function validateCity(){
+					var city = $("#city");
+
+					if(city.value === "mumbai" || city.value === "pune" || city.value === "nagpur"){
+						$("#cityNameErr").text("");
+					}
+					else{
+						$("#cityNameErr").text("*please select city");
+						
+					}
+
+				};
+
+				//for pincode
+				function validatePincode(){
+					var pincodeField = $("#pincodeField").val();
+					let pincode = /^[1-9][0-9]{5}$/;
+					if(pincode.test(pincodeField)){
+						$("#pincodeErr").text("");
+					}
+					else{
+						$("#pincodeErr").text("*pincode must be 6 digit");
+					}
+
+				};
+
+
+				//submit
+
+				function validateForm(){
+					console.log("called");
+					var firstName = $("#firstName").val();
+					var lastName = $("#lastName").val();
+					var age = $("#age").val();
+					var dob = $("#dob").val();
+
+					var gender = document.querySelector('input[name="gender"]:checked');
+
+					var mobileNo = $("#mobileNo").val();
+					var emailId = $("#emailId").val();
+					var passwordField = $("#passwordField").val();
+					var confirmPasswordField = $("#confirmPasswordField").val();
+
+					var courses =document.querySelectorAll('input[name="courseName"]:checked');
+					var coursesList = [];
+					courses.forEach(function(item){
+						coursesList.push(item.value)
+					});
+					
+					//console.log(coursesList);
+
+					var address = $("#address").val();
+					var city = $("#city");
+
+					var pincodeField = $("#pincodeField").val();
+						//------------------------------------------------------------------------------------
+					let regFirstName = /^[a-zA-Z]{2,15}$/;
+					let regLastName = /^[a-zA-Z]{2,15}$/
+					let regAge = /^(1[8|9]|[2-9][0-9]|[1][0-9][0-9])$/;
+				    	let regDob = /^\d{2}\/\d{2}\/\d{4}$/;
+					let regMobileNo = /^[6-9][0-9]{9}$/;
+					let regEmail = /^[a-z][a-z0-9]+[.]?[a-z0-9]+@[a-z]+(.com)$/;
+					let regPassword = /^(?=.*[a-zA-z])(?=.*[0-9])(?=.*[@#%$&*])/;
+					let regAddress = /^[a-zA-Z0-9\s]{5,30}$/;
+					let pincode = /^[1-9][0-9]{5}$/;
+					
+						event.preventDefault();
+
+							if(firstName == "" || !regFirstName.test(firstName) || lastName == "" || !regLastName.test(lastName) ||age == "" || !regAge.test(age)|| dob == "" || 
+								!regDob.test(dob) || (!gender) || mobileNo == "" || !regMobileNo.test(mobileNo) || emailId == "" || !regEmail.test(emailId) || passwordField == "" ||
+								!regPassword.test(passwordField) || confirmPasswordField == "" || !(password == confirmPasswordField) || (!courses) || address == "" || 
+								!regAddress.test(address) ||!(city.value === "mumbai" || city.value == "pune" || city.value === "nagpur") || pincodeField == "" || !pincode.test(pincodeField)){
+
+								alert("Incorrect fields");
+							}
+							else{
+								alert("Submit Succesfully");
+
+								var array = [];
+								var person;
+
+								person = {
+									firstname:firstName,
+									lastname:lastName,
+									ageField:age,
+									dobField:dob,
+									genderfield:gender.value,
+									mobileno:mobileNo,
+									emailid:emailId,
+									course:coursesList.toString(),
+									addressField:address,
+									cityfield:city.value,
+									pincodefield:pincodeField
+								}
+
+								//console.log(person.course);
+
+								array.push(person);
+								$("#myForm").reset();
+
+								console.log(array);
+								
+								for(let i=0 ; i<array.length ;i++){
+										console.log(array[i]);
+										
+										var table = $("#infoTable");
+										table.html() = table.html() + `<tr>
+																				<td class="td">${array[i].firstname}</td>
+																				<td class="td">${array[i].lastname}</td>
+																				<td class="td">${array[i].ageField}</td>
+																				<td class="td">${array[i].dobField}</td>
+																				<td class="td">${array[i].genderfield}</td>
+																				<td class="td">${array[i].mobileno}</td>
+																				<td class="td">${array[i].emailid}</td>
+																				<td class="td">${array[i].course}</td>
+																				<td class="td">${array[i].addressField}</td>
+																				<td class="td">${array[i].cityfield}</td>
+																				<td class="td">${array[i].pincodefield}</td>
+																			</tr>`
+								}	
+								$("#popDisplayIn").css({"display":"none"});
+								$("#registrationwindow").css({"display":"none"});
+								$("#novalue").css({"display":"block"});
+
+								
+							}
+							
+
+					};
+						
+
+	
+};
