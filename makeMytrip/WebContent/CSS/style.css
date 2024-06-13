@@ -1,0 +1,216 @@
+@CHARSET "ISO-8859-1";
+		
+
+	
+	.main-Container{
+		height:951px;
+		width:1000px;
+		border:2px solid black;
+		margin: auto;
+		background-color: #201914;
+		
+	}
+	
+	.navbar-container{
+		position: relative;
+	}
+	
+	.bgImg{
+		background-image: url("../images/bg2.jpg");
+		height: 436px;
+	}
+	.logo-mmt{
+		height: 109px;
+		padding-left:20px;
+		position:absolute;
+		top: -23px;
+    	left: 30px;
+	}
+	.login-registration {
+		   float: right;
+	    /* margin: 16px 16px; */
+	    padding-right: 10px;
+		    
+	}
+
+	.login-registration a{
+		margin: 0px 11px;
+		font-size: 21px;
+		text-decoration: none;
+		color: black;
+	}
+	.login-registration a:hover{
+		color:red;
+	}
+	
+	.form-content{
+		text-align: center;
+    background-color: white;
+    height: 240px;
+    width: 925px;
+    margin: auto;
+    margin-top: -298px;
+    border: 2px solid #3f82f9;
+    position: relative;
+    border-radius: 9px;
+	}
+	
+	#flight-search{
+		position: absolute;
+	    bottom: -19px;
+	    right: 378px;
+	    height: 46px;
+	    width: 163px;
+	    font-size: 28px;
+	    background-color: #468df1;
+	    border-radius: 31px;
+	    color: white;
+	    border: none;
+	    cursor:pointer;
+	}
+	
+	.field-searchForm{
+		cursor: pointer;
+	    height: 66px;
+	    border-radius: 14px;
+	    padding-left: 13px;
+	    border-color: #80808063;
+	} 
+
+	#logoName{
+		display:inline-block;
+	}
+	
+	
+	footer{
+		background-color: black;
+		color: white;
+		height: 89px;
+    	margin-top: 28px;
+    	margin-left: -3px;
+   		margin-right: -3px;
+
+	}
+	
+	.flightAvailables{
+	border: 2px solid black;
+    height: 800px;
+    width: 900px;
+    margin: auto;
+    margin-top: 135px;
+	}
+
+	
+	.tile{
+		border: 2px solid black;
+    height: 50px;
+    width: 700px;
+	}
+	
+	.adminPanelForm{
+		cursor: pointer;
+	    height: 66px;
+	    border-radius: 14px;
+	    padding-left: 13px;
+	    border-color: #80808063;
+	    margin-left: 4px;
+	    margin-bottom: 12px;
+	}
+	
+	.panelName{
+		margin-top: 110px;
+    	margin-left: 390px;
+	}
+	
+	.panelInfoContainer{
+		margin-left: 92px;
+    	margin-top: 68px;
+	}
+	
+	#addFlight{
+		height: 36px;
+	}
+	
+	.flightContainer{
+		border:1px solid black;
+		height:700px;
+		width:700px;
+	}
+	
+	table{
+		border-collapse: collapse;
+    margin: auto;
+    margin-top: 145px;
+    width: 919px;
+    /* height: 49px; */
+    font-size: 20px;
+	}
+	tr,th,td{
+		text-align:center;
+		margin:3px;
+		padding:5px;
+	}
+	tr:nth-child(even) {background-color: #f2f2f2;}
+	.bookLink{
+		text-decoration:none;
+		color:green;
+	}
+	
+	.bookLink:hover{
+		color:green;
+	}
+	
+	#flightData {
+		    margin-top: 34px;
+	}
+	#flightData a{
+		background-color: green;
+    font-size: 25px;
+    color: white;
+    text-decoration:none;
+    padding: 6px;
+
+	}
+	
+	.bookLink{
+		text-decoration:none;
+		color:green;
+	}
+	
+	#footer{
+	width: 1000px;
+    margin-top: 86px;
+	}
+	
+	footer {
+    background-color: black;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+  }
+
+  footer p {
+    margin: 0;
+  }
+
+  footer a {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  footer a:hover {
+    text-decoration: underline;
+  }
+	
+	.tileContainer{
+		height:300px;
+		margin-top: 55px;
+	}
+	
+	.tileFlight{
+		height: 231px;
+    	width: 224px;
+   	 	margin-top: 55px;
+    	float: left;
+    	margin-left: 82px;
+	}
